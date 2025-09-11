@@ -1,0 +1,85 @@
+
+JDBC- Java Data base connectivity
+
+Statement
+preparedStatement
+
+callableStatement
+
+
+database
+table
+  rows
+  column
+
+create table dacstudent
+(
+   sid int,
+   sname varchar(20),
+   cname varchar(20),
+   mark int  
+)
+insert into dacstudent values(1001,'nsnathan','dac',30);
+
+select * from dacstudent;
+
+
+
+
+select * from dacstudent where sid = 1001;
+
+
+
+
+select * from dacstudent where sid = ?;
+
+
+steps to connect the data base
+
+load the driver
+get connection
+
+create statement
+
+create query
+
+execute the query
+
+iterate the result
+
+public class JdbcStatementExample 
+{
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException 
+	{
+	
+		
+        Class.forName("com.mysql.cj.jdbc.Driver");
+		
+        Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/dbda","root","cdacacts");
+
+        System.out.println("got connection");
+		
+		
+        
+        
+              Statement smt= con.createStatement();
+        
+              String q = "select * from emp";
+               
+              ResultSet rs =smt.executeQuery(q);
+               
+        
+               while(rs.next())
+               {
+            	   System.out.println(rs.getInt(1) + rs.getString(2) +rs.getFloat(6));
+               }
+        
+        con.close();
+        rs.close();
+     
+		
+	}
+	
+	
+}
