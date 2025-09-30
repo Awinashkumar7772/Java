@@ -1,0 +1,54 @@
+//Example of two number sum in java
+
+package dac;
+
+import java.util.Scanner;
+
+public class Product {
+public static void main(String[] args) {
+	sum();
+	
+}
+
+static void sum () {
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter your first Number");
+	int num1 = s.nextInt();
+	System.out.println("Enter your second number");
+	int num2 = s.nextInt();
+
+	int sum =  num1+ num2;
+	System.out.println("The sum of two numbers are " + "" +  sum);
+	
+	
+}
+
+}
+
+//String example in Java
+
+package dac;
+
+import java.util.Scanner;
+
+public class Product{
+	
+	
+	static String greet() {
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the string you want to print");
+		String n = s.nextLine();
+		
+		
+		
+		return n;
+	}
+	public static void main(String[] args) {
+		String ans = greet();
+				System.out.println(ans);
+	}
+}
+
+
+
